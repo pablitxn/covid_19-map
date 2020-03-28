@@ -1,5 +1,5 @@
 // import mapStyle from './map-style.js'
-import { getGlobalData } from './src/services/index.js'
+import { getGlobalData, getBriefData } from './src/common/services/index.js'
 
 // DOM
 const _map = document.getElementById('map')
@@ -10,10 +10,11 @@ const map = new window.google.maps.Map(_map, {
 		lat: 0,
 		lng: 0
 	},
-	zoom: 3
+	zoom: 2
 	// styles: mapStyle
 })
 const popup = new window.google.maps.InfoWindow()
+// const icon = '../../assets/icons/selector-icon.png'
 
 // Power
 async function renderGlobalData() {
