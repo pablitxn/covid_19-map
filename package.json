@@ -1,0 +1,15 @@
+{
+	"name": "covid_19-map",
+	"version": "0.1",
+	"description": "Mapa interactivo con los paises afectados por el corona virus y sus datos actualizados en tiempo real (marzo 2020)",
+	"main": "index.js",
+	"repository": "https://github.com/pablitxn/CoVid_19-map.git",
+	"author": "Pablo Coronel <me@pablitxn.io>",
+	"license": "MIT",
+	"scripts": {
+		"start": "live-server"
+	},
+	"devDependencies": {
+		"live-server": "^1.2.1"
+	}
+}
