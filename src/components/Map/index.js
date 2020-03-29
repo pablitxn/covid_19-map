@@ -1,59 +1,30 @@
 // import mapStyle from './map-style.js'
-import { getGlobalData, getBriefData } from '../../common/services/index.js'
-import { selectedOption } from '../OptionsBar/index.js'
+import Component from '../../lib/component.js'
+import store from '../../store/index.js'
+import { renderMap } from './utils.js'
 
-// DOM
-const _map = document.getElementById('map')
+class Map extends Component {
+	constructor() {
+		super({
+			store,
+			element: document.getElementById('map')
+		})
+	}
 
-// Definitions
-const map = new window.google.maps.Map(_map, {
-	center: {
-		lat: 0,
-		lng: 0
-	},
-	zoom: 2
-	// styles: mapStyle
-})
-const popup = new window.google.maps.InfoWindow()
-// const icon = '../../assets/icons/selector-icon.png'
-
-// Power
-async function renderGlobalData() {
-	const data = await getGlobalData()
-	data.forEach(item => {
-		const marker = new window.google.maps.Marker({
-			position: {
-				lat: item.location.lat,
-				lng: item.location.lng
+	render() {
+		const map = new window.google.maps.Map(this.element, {
+			center: {
+				lat: 0,
+				lng: 0
 			},
-			map,
-			// icon,
-			title: String(item.confirmed)
+			zoom: 2
+			// styles: mapStyle
 		})
-		marker.addListener('click', () => {
-			popup.setContent(renderAditionalInfo(item))
-			popup.open(map, marker)
-		})
-	})
+		const popup = new window.google.maps.InfoWindow()
+		const infoSelected = store.state.items[store.state.items.length - 1]
+		console.log(`infoSelected -> ${infoSelected}`)
+		renderMap(map, popup, infoSelected)
+	}
 }
 
-function renderAditionalInfo({
-	confirmed,
-	deaths,
-	recovered,
-	provincestate,
-	countryregion
-}) {
-	return `
-    <div>
-      <p> <strong>${provincestate} - ${countryregion}</strong> </p>
-      <p> confirmados: ${confirmed} </p>
-      <p> muertes: ${deaths} </p>
-      <p> recuperados: ${recovered} </p>
-    </div>
-  `
-}
-
-renderGlobalData()
-
-console.log(selectedOption)
+export default Map
