@@ -14,8 +14,8 @@
 			<div class="map" id="map"></div>
 			<div class="options">
 				<label>Seleccioná un filtro</label>
-				<select name="filter-map" class="filter_map">
-					<option value="0">Ver todos</option>
+				<select name="filter-map" class="filter" id="filter">
+					<option value="0">Ver todo</option>
 					<option value="1">Muertos</option>
 					<option value="2">Recuperados</option>
 					<option value="3">Infectados</option>
@@ -28,6 +28,7 @@
 			defer
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp9w89NeF8noYa6q5Xbn-jMUjCiW7L2nU"
 		></script>
-		<script type="module" src="./index.js"></script>
+		<script type="module" src="src/components/OptionsBar/index.js"></script>
+		<script type="module" src="./src/components/Map/index.js"></script>
 	</body>
 </html>
