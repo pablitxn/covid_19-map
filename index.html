@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./src/styles/styles.css" />
-		<title>CoVid_19-map</title>
-	</head>
-	<body>
-		<header>
-			<h1 class="title-page">☣ CoVid 19 - Map ☣</h1>
-		</header>
-		<div class="content">
-			<div class="map" id="map"></div>
-			<div class="options">
-				<label>Seleccioná un filtro</label>
-				<select name="filter-map" class="filter" id="filter">
-					<option value="1" selected>Infectados</option>
-					<option value="2">Muertos</option>
-					<option value="3">Recuperados</option>
-				</select>
-			</div>
-		</div>
-		<footer class="footer"><small>webpage por @pablitxn</small></footer>
-		<script
-			async
-			defer
-			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp9w89NeF8noYa6q5Xbn-jMUjCiW7L2nU"
-		></script>
-		<script type="module" src="src/main.js"></script>
-	</body>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./src/styles/styles.css"/>
+    <title>CoVid_19-map</title>
+</head>
+<body>
+<header>
+    <h1 class="title-page">☣ CoVid 19 - Map ☣</h1>
+</header>
+<div class="content">
+    <div class="map" id="map"></div>
+    <div class="options">
+        <label>Seleccioná un filtro</label>
+        <select name="filter-map" class="filter" id="filter">
+            <option value="1" selected>Infectados</option>
+            <option value="2">Muertos</option>
+            <option value="3">Recuperados</option>
+        </select>
+    </div>
+</div>
+<footer class="footer"><small>webpage por @pablitxn</small></footer>
+<script
+        async
+        defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp9w89NeF8noYa6q5Xbn-jMUjCiW7L2nU"
+></script>
+<script type="module" src="src/main.js"></script>
+</body>
 </html>

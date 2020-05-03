@@ -10,6 +10,7 @@ export async function getGlobalData() {
 		switch (response.status) {
 			case 200:
 				const data = await response.json()
+				console.log("la data -> ", data)
 				return data
 			case 400:
 				alert(`Ha ocurrido un error con la petición ${response.error}`)
